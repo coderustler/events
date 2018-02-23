@@ -3,11 +3,11 @@
     <div class="container">
         <h2>Edit Event</h2>
         <hr />
-        <form action="{{ route('tasks.update', $event->id) }}" method="post">
+        <form action="{{ route('events.update', $event->id) }}" method="post">
             {{ csrf_field() }}
             <div class="form-group col-md-8 col-md-offset-2">
                 <label for="name">Edit Event:</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ $event->name }}">
+                <input type="text" class="form-control" id="name" name="title" value="{{ $event->title }}">
             </div>
             <div class="form-group col-md-8 col-md-offset-2">
                 <label for="description">Edit Description:</label>

@@ -20,6 +20,7 @@
                 // put your options and callbacks here
                 // ajax : true so we can use one controller for post data
                 events : [
+                    
                     @foreach($events as $event)
                     {
                         id : '{{ $event->id }}',
@@ -74,7 +75,11 @@
                             dataType: 'json',
                             type:'POST',
                             url: '{{ route('update', 0) }}',
-                            data:{id:event.id, event_date:event.start.format()},
+                            data:{
+                                    id:event.id, 
+                                    start:event.start.format(),
+                                    end:event.end.format()
+                                  },
                             success: function(data){
                             }, 
                         });

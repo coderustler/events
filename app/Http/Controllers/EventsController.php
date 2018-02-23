@@ -23,9 +23,9 @@ class EventsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($date)
     {
-        //
+        return view('events.create', compact('date'));
     }
 
     /**
@@ -36,7 +36,8 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Event::create($request->all());
+        return redirect()->route('events.index');
     }
 
     /**
@@ -47,7 +48,7 @@ class EventsController extends Controller
      */
     public function show(event $event)
     {
-        //
+        echo'In show';
     }
 
     /**
@@ -56,9 +57,10 @@ class EventsController extends Controller
      * @param  \App\event  $event
      * @return \Illuminate\Http\Response
      */
-    public function edit(event $event)
+    public function edit($id)
     {
-        //
+        $event = event::findOrFail($id);
+        return view('events.edit')->with('event', $event);
     }
 
     /**
@@ -70,7 +72,13 @@ class EventsController extends Controller
      */
     public function update(Request $request, event $event)
     {
-        //
+        $event = Event::findOrFail($request->id)->update($request->all());
+        //Was it an ajax POST request or standard form POST request? 
+        if($request->ajax):
+            return response()->json($event);
+        else:
+            return redirect()->route('events.index');
+        endif;
     }
 
     /**
