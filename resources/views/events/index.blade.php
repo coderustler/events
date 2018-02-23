@@ -53,11 +53,47 @@
                 eventDragStart: function(event, jsEvent, view) {
                     $(this).css('background-color', '#00ff00');
                     console.log('event picked up!');
+                    console.log(event.end);
                 },
                 // drop on a new date and submit to database
                 eventDrop: function(event, delta, revertFunc, jsEvent, view) {
                     
-                    console.log('event_id of dropped event  = ' + event.id)
+                    swal({
+                        title: "You moved the event. Save it?",
+                        text: "Once moved, you can move it back.",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                        })
+                        .then(function(willDelete){
+                        if (willDelete) {
+                            swal("Moved! Your event has been rescheduled!", {
+                            icon: "success",
+                            });
+                    
+                        $.ajax({
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            },
+                            dataType: 'json',
+                            type:'POST',
+                            url: '{{ route('update', 0) }}',
+                            data:{
+                                    id:event.id, 
+                                    start:event.start.format(),
+                                    end:event.end.format()
+                                  },
+                            success: function(data){
+                            }, 
+                        });
+                        } else {
+                            swal("Your event has not been rescheduled.");
+                            revertFunc();
+                        }
+                    });   
+                },
+                eventResize: function(event, delta, revertFunc){
+                    console.log('event_id of dropped event  = ' + event.id + ' and end date of ' + event.end.format());
                     swal({
                         title: "You moved the event. Save it?",
                         text: "Once moved, you can move it back.",
