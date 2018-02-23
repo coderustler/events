@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('tasks', 'TasksController@index');
-Route::get('tasks/{date}', 'TasksController@create');
-Route::post('tasks/{id}', 'TasksController@update')->name('update');
+Route::get('events', 'EventsController@index');
+Route::get('events/{date}', 'EventsController@create');
+Route::post('events/{id}', 'EventsController@update')->name('update');
 
-Route::resource('tasks', 'TasksController');
+Route::resource('events', 'EventsController');
