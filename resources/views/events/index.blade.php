@@ -18,7 +18,6 @@
                 //Put your options and callbacks here
                 //Make the event dragable, resizabe, change opacity
                 editable: true,
-                durationEditable: true,
                 dragOpacity: .60,
                 // ajax : true so we can use one controller for post data
                 events : [
