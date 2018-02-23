@@ -15,8 +15,10 @@
             // page is now ready, initialize the calendar...
             $('#calendar').fullCalendar({
                 
-                //Make the event dragable
+                //Make the event dragable, resizabe, change opacity
                 editable: true,
+                durationEditable: true,
+                dragOpacity: .60,
                 // put your options and callbacks here
                 // ajax : true so we can use one controller for post data
                 events : [
@@ -32,6 +34,7 @@
                         ajax : true,
                     },
                     @endforeach
+
                 ],
                 //Show the event entry form when a day is clicked
                 dayClick: function(date, jsEvent, view) {
