@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('events', 'eventsController@index');
+Route::get('events/{date}', 'eventsController@create');
+Route::post('events/{id}', 'eventsController@update')->name('update');
+
+Route::resource('events', 'eventsController');
