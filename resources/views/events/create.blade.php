@@ -3,12 +3,12 @@
     <div class="container">
         <h2>Create a new event</h2>
         <hr />
-        <form action="{{ route('tasks.store') }}" method="post">
+        <form action="{{ route('events.store') }}" method="post">
             {{ csrf_field() }}
-            <input type="hidden" name="task_date" class="date" value="{{ $date }}" />
+            <input type="hidden" name="start" class="date" value="{{ $start }}" />
             <div class="form-group col-md-8 col-md-offset-2">
-                <label for="name">Enter Task:</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Enter Event" required>
+                <label for="name">Enter Event:</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Enter Event" required>
             </div>
             <div class="form-group col-md-8 col-md-offset-2">
                 <label for="description">Description:</label>
