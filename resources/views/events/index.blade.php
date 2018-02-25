@@ -31,7 +31,7 @@
                         backgroundColor : '{{  $event->backgroundColor }}',
                         url : '{{ route('events.edit', $event->id) }}',
                         ajax : true,
-                    }
+                    },
                     @endforeach
 
                 ],
@@ -51,8 +51,9 @@
                 },
                 eventDragStart: function(event, jsEvent, view) {
                     $(this).css('background-color', '#00ff00');
-                    //console.log('event picked up!');
-                    //console.log(event.end);
+                    console.log('event picked up!');
+                    console.log(event.start);
+                    console.log(event.end);
                 },
                 // drop on a new date and submit to database
                 eventDrop: function(event, delta, revertFunc, jsEvent, view) {
@@ -78,9 +79,9 @@
                             type:'POST',
                             url: '{{ route('update', 0) }}',
                             data:{
-                                    id:event.id, 
+                                    id:event.id,
                                     start:event.start.format(),
-                                    end:event.end.format()
+                                    end:event.end.format(),
                                   },
                             success: function(data){
                             }, 

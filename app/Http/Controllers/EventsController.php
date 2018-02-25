@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use Illuminate\Http\Request;
+use \DateTime;
 
 class EventsController extends Controller
 {
@@ -36,8 +37,26 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
-        Event::create($request->all());
-        return redirect()->route('events.index');
+        //Since all new events will start and end at same time by default:
+        if($request->start === $request->end):
+
+            $event = new Event();
+            $event->title = $request->title;
+            $event->description = $request->description;
+            $event->start = $request->start;
+            //Can't create an event with start and end of same date
+            $event->end = new DateTime($request->end);
+            $event->end->modify("+24 hours");
+            $event->backgroundColor = $request->backgroundColor;
+                    
+        endif;
+
+        if($event->save()):
+            return redirect()->route('events.index');
+        else:
+            return view('events.create_error');
+        endif;  
+
     }
 
     /**

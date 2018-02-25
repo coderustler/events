@@ -6,6 +6,7 @@
         <form action="{{ route('events.store') }}" method="post">
             {{ csrf_field() }}
             <input type="hidden" name="start" class="date" value="{{ $date }}" />
+            <input type="hidden" name="end" class="date" value="{{ $date }}" />
             <div class="form-group col-md-8 col-md-offset-2">
                 <label for="name">Enter Event:</label>
                 <input type="text" class="form-control" id="title" name="title" placeholder="Enter Event" required>
