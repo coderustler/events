@@ -9,7 +9,7 @@
             <input type="hidden" name="end" class="date" value="{{ $date }}" />
             <div class="form-group col-md-8 col-md-offset-2">
                 <label for="name">Enter Event:</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Enter Event" required>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Enter Event" required autofocus>
             </div>
             <div class="form-group col-md-8 col-md-offset-2">
                 <label for="description">Description:</label>
