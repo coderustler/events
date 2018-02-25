@@ -31,7 +31,7 @@
                         backgroundColor : '{{  $event->backgroundColor }}',
                         url : '{{ route('events.edit', $event->id) }}',
                         ajax : true,
-                    },
+                    }
                     @endforeach
 
                 ],
@@ -47,12 +47,12 @@
                 },
                 eventClick: function(event, jsEvent, view) {
                     $(this).css('background-color', '#ff0000');
-                    console.log('Clicked an event, direct to a details page via the controller show function');
+                    //console.log('Clicked an event, direct to a details page via the controller show function');
                 },
                 eventDragStart: function(event, jsEvent, view) {
                     $(this).css('background-color', '#00ff00');
-                    console.log('event picked up!');
-                    console.log(event.end);
+                    //console.log('event picked up!');
+                    //console.log(event.end);
                 },
                 // drop on a new date and submit to database
                 eventDrop: function(event, delta, revertFunc, jsEvent, view) {
