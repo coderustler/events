@@ -25,7 +25,7 @@ class EventsTableSeeder extends Seeder
             'title' => "81st Floor Lan Drops",
             'description' => "Pull lan data drops from MDF-1 to IDF-81",
             'start' => "2018-3-5",
-            'end' => "2018-3-6",
+            'end' => "2018-3-7",
             'backgroundColor' => '#ff0000',
         ]);
 
