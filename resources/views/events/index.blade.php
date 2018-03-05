@@ -25,8 +25,8 @@
                     @foreach($events as $event)
                     {
                         id : '{{ $event->id }}',
-                        title : '{{ $event->title }}',
-                        start : '{{ $event->start }}',
+                        title : "{!! $event->title !!}",
+                        start : "{!! $event->start !!}",
                         end : '{{ $event->end }}',
                         backgroundColor : '{{  $event->backgroundColor }}',
                         url : '{{ route('events.edit', $event->id) }}',
@@ -60,14 +60,14 @@
                     
                     swal({
                         title: "You moved the event. Save it?",
-                        text: "Once moved, you can move it back.",
+                        text: "You can move it as mush as you want.",
                         icon: "warning",
                         buttons: true,
                         dangerMode: true,
                         })
                         .then(function(willDelete){
                         if (willDelete) {
-                            swal("Moved! Your event has been rescheduled!", {
+                            swal("Moved. Your event has been rescheduled.", {
                             icon: "success",
                             });
                     
@@ -95,8 +95,8 @@
                 eventResize: function(event, delta, revertFunc){
                     console.log('event_id of dropped event  = ' + event.id + ' and end date of ' + event.end.format());
                     swal({
-                        title: "You moved the event. Save it?",
-                        text: "Once moved, you can move it back.",
+                        title: "Changed Timeline. Save it?",
+                        text: "You can expand it as far as you need to.",
                         icon: "warning",
                         buttons: true,
                         dangerMode: true,
