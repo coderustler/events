@@ -13,7 +13,7 @@
                 <label for="description">Edit Description:</label>
                 <textarea class="form-control" id="description" name="description">{{ $event->description }}</textarea>
             </div>
-            <div class="form-group col-md-8 col-md-offset-2">
+            <div class="form-group col-md-2 col-md-offset-2">
                 <label for="backgroundColor">Edit Color</label>
                 <input type="color" class="form-control" name="backgroundColor" value="{{ $event->backgroundColor }}">
             </div>

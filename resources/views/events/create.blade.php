@@ -15,7 +15,7 @@
                 <label for="description">Description:</label>
                 <textarea class="form-control" id="description" name="description" placeholder="Event Description" required></textarea>
             </div>
-            <div class="form-group col-md-8 col-md-offset-2">
+            <div class="form-group col-md-2 col-md-offset-2">
                 <label for="backgroundColor">Color</label>
                 <input type="color" class="form-control" name="backgroundColor" required>
             </div>
