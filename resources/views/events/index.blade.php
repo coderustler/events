@@ -19,7 +19,6 @@
                 //Make the event dragable, resizabe, change opacity
                 editable: true,
                 dragOpacity: .60,
-                // ajax : true so we can use one controller for post data
                 events : [
                     
                     @foreach($events as $event)
@@ -43,17 +42,12 @@
                     var date_clicked =  date.format();
                     //Redirect to the new event entry form
                     window.location.href = "{{URL::to('events')}}" + "/" + date_clicked;
-                    //console.log('in dayClick. Show an event entry form. date_clicked = ' + date_clicked);
                 },
                 eventClick: function(event, jsEvent, view) {
                     $(this).css('background-color', '#ff0000');
-                    //console.log('Clicked an event, direct to a details page via the controller show function');
                 },
                 eventDragStart: function(event, jsEvent, view) {
                     $(this).css('background-color', '#00ff00');
-                    console.log('event picked up!');
-                    console.log(event.start);
-                    console.log(event.end);
                 },
                 // drop on a new date and submit to database
                 eventDrop: function(event, delta, revertFunc, jsEvent, view) {
@@ -71,21 +65,22 @@
                             icon: "success",
                             });
                     
-                        $.ajax({
-                            headers: {
-                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                            },
-                            dataType: 'json',
-                            type:'POST',
-                            url: '{{ route('update', 0) }}',
-                            data:{
-                                    id:event.id,
-                                    start:event.start.format(),
-                                    end:event.end.format(),
-                                  },
-                            success: function(data){
-                            }, 
-                        });
+                            $.ajax({
+                                headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                },
+                                dataType: 'json',
+                                type:'POST',
+                                url: '{{ route('update', 0) }}',
+                                data:{
+                                        id:event.id,
+                                        start:event.start.format(),
+                                        end:event.end.format(),
+                                    },
+                                success: function(data){
+                                }, 
+                            });
+
                         } else {
                             swal("Your event has not been rescheduled.");
                             revertFunc();
@@ -107,21 +102,22 @@
                             icon: "success",
                             });
                     
-                        $.ajax({
-                            headers: {
-                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                            },
-                            dataType: 'json',
-                            type:'POST',
-                            url: '{{ route('update', 0) }}',
-                            data:{
-                                    id:event.id, 
-                                    start:event.start.format(),
-                                    end:event.end.format()
-                                  },
-                            success: function(data){
-                            }, 
-                        });
+                            $.ajax({
+                                headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                },
+                                dataType: 'json',
+                                type:'POST',
+                                url: '{{ route('update', 0) }}',
+                                data:{
+                                        id:event.id, 
+                                        start:event.start.format(),
+                                        end:event.end.format()
+                                    },
+                                success: function(data){
+                                }, 
+                            });
+                            
                         } else {
                             swal("Your event has not been rescheduled.");
                             revertFunc();
