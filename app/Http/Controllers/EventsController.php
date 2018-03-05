@@ -67,7 +67,7 @@ class EventsController extends Controller
      */
     public function show(event $event)
     {
-        echo'In show';
+        //
     }
 
     /**
