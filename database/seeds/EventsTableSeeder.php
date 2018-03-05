@@ -44,7 +44,7 @@ class EventsTableSeeder extends Seeder
             'description' => "Have manpower available to receive 120 spools of cable",
             'start' => "2018-3-8",
             'end' => "2018-3-9",
-            'backgroundColor' => '#00ff00',
+            'backgroundColor' => '#008000',
         ]);
 
         DB::table('events')->insert([
