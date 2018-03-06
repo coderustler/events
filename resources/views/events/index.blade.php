@@ -88,7 +88,7 @@
                     });   
                 },
                 eventResize: function(event, delta, revertFunc){
-                    console.log('event_id of dropped event  = ' + event.id + ' and end date of ' + event.end.format());
+                    //console.log('event_id of dropped event  = ' + event.id + ' and end date of ' + event.end.format());
                     swal({
                         title: "Changed Timeline. Save it?",
                         text: "You can expand it as far as you need to.",

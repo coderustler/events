@@ -106,8 +106,10 @@ class EventsController extends Controller
      * @param  \App\event  $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy(event $event)
+    public function destroy(Request $request)
     {
-        //
+        if($request->ajax):
+            dd('In destroy');
+        endif;
     }
 }
