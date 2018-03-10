@@ -108,8 +108,10 @@ class EventsController extends Controller
      */
     public function destroy(Request $request)
     {
-        if($request->ajax):
-            dd('In destroy');
-        endif;
+        $id = $request->event_id; 
+        $delete = Event::find($id);
+        $delete->delete();
+        return redirect()->route('events.index');
+        //dd('In destroy and event_id = ' . $request->event_id);
     }
 }

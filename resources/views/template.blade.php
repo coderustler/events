@@ -19,7 +19,7 @@
 
         <!-- javacript here -->
 
-    <script>
+   <!--  <script>
 
         $('#delete_btn').click(function(){
             
@@ -62,7 +62,7 @@
 
         });
 
-    </script>
+    </script> -->
 
     </body>
 </html>

@@ -20,12 +20,14 @@
             <div class="form-group col-md-8 col-md-offset-2">
                 <button type="submit" class="btn btn-primary btn-lg">Submit Edit</button> 
             </div>
-            <div class="form-group col-md-2 col-md-offset-8">
-                <button type="button" id="delete_btn" class="btn btn-primary btn-lg">Delete Event</button> 
-            </div>
         </form>
-        
-        
+        <form action="{{ url('events', $event->id) }}" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="event_id" value="{{ $event->id }}">
+            <input type="submit" class="btn btn-danger" value="Delete">
+        </form>
+           
     </div>
 @endsection
 
