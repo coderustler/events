@@ -6,9 +6,9 @@ A Laravel 5.5 FullCalendar drag and drop implementation
 <p>To install as a stand alone application (The following is using xampp on windows localhost):</p>
 
 <p>git clone https://github.com/coderustler/events.git</p>
-<p>cd to: laravel-events</p>
+<p>cd to: events</p>
 <p>Run: composer update</p>
-<p>Create a blank database: laravel-events</p>
+<p>Create a blank database: events</p>
 <p>copy .env.example  to  .env</p>
 <p>Run: php artisan key:generate</p>
 <p>Edit .env file database contants and url per your specifications</p>
