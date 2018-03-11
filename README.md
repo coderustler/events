@@ -1,11 +1,11 @@
-# laravel-events
+# events
 A Laravel 5.5 FullCalendar drag and drop implementation
 
 <p>You can use this code as a start to a Laravel 5.5, FullCalendar drag and drop application</p>
 <p>It pulls in <a href="https://fullcalendar.io/">FullCalendar</a> and <a href="https://github.com/t4t5/sweetalert">SweetAlert</a> via CDN</p>
 <p>To install as a stand alone application (The following is using xampp on windows localhost):</p>
 
-<p>git clone https://github.com/coderustler/laravel-events.git</p>
+<p>git clone https://github.com/coderustler/events.git</p>
 <p>cd to: laravel-events</p>
 <p>Run: composer update</p>
 <p>Create a blank database: laravel-events</p>
