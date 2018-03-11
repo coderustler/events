@@ -19,50 +19,5 @@
 
         <!-- javacript here -->
 
-   <!--  <script>
-
-        $('#delete_btn').click(function(){
-            
-            swal({
-                title: "Delete the event?",
-                text: "Once deleted, it is gone!.",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-                })
-                .then(function(willDelete){
-                if (willDelete) {
-                    swal("Bye Bye!. Your event has been deleted.", {
-                    icon: "success",
-                    });
-            
-                    $.ajax({
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        },
-                        dataType: 'json',
-                        type:'post',
-                        url: '{{ route('events.destroy', 6) }}',
-                        data:{
-                                id:event.id,
-                            },
-                        success: function(data){
-
-                            alert('in success and data = ' + data)
-                        }, 
-                        error: function(data){
-                            alert('in error and data = ' + data)
-                        }
-                    });
-
-                } else {
-                    swal("Your event has not been deleted.");
-                }
-            });
-
-        });
-
-    </script> -->
-
     </body>
 </html>

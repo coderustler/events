@@ -112,6 +112,5 @@ class EventsController extends Controller
         $delete = Event::find($id);
         $delete->delete();
         return redirect()->route('events.index');
-        //dd('In destroy and event_id = ' . $request->event_id);
     }
 }
