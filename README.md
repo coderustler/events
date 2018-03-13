@@ -12,7 +12,7 @@ A Laravel 5.5 FullCalendar drag and drop implementation
 <p>Create a blank database: events</p>
 <p>copy .env.example  to  .env</p>
 <p>Run: php artisan key:generate</p>
-<p>Edit .env file database contants and url per your specifications</p>
+<p>Edit .env file database constants and url per your specifications</p>
 <p>Run: php artisan migrate</p>
 <p>Run: php artisan db:seed</p>
 <p>Run: php artisan:serve</p>
