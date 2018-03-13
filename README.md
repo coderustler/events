@@ -5,7 +5,7 @@ A Laravel 5.5 FullCalendar drag and drop implementation
 <p>It pulls in <a href="https://fullcalendar.io/">FullCalendar</a> and <a href="https://github.com/t4t5/sweetalert">SweetAlert</a> via CDN</p>
 <p>To install as a stand alone application (The following is using xampp on windows localhost):</p>
 <p>It includes full CRUD with dummy seed data in March 2018 for example purposes. It uses MySQL in this example</p>
-<p>The following instructions assume a working knowledge of Composer and Laravel</p>
+<p>The following instructions assume a working knowledge of Composer and Laravel:</p>
 
 <p>git clone https://github.com/coderustler/events.git</p>
 <p>cd to: events</p>
