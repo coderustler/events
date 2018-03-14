@@ -1,4 +1,4 @@
-# events
+# coderustler/events
 A Laravel 5.5 FullCalendar drag and drop implementation
 
 <p>You can use this code as a start to a Laravel 5.5, FullCalendar drag and drop application</p>
