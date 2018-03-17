@@ -19,6 +19,7 @@
                 //Make the event dragable, resizabe, change opacity
                 editable: true,
                 dragOpacity: .60,
+                eventTextColor: '#000000',
                 events : [
                     
                     @foreach($events as $event)
