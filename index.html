@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <title>coderustler events</title>
+</head>
+<body>
+    <div class="container">
+
+        <ul class="nav nav-tabs top-padding">
+            <li role="presentation" class="active"><a href="index.html">Home</a></li>
+            <li role="presentation"><a href="#">Profile</a></li>
+            <li role="presentation"><a href="#">Messages</a></li>
+        </ul>
+
+        <h2>coderustler/events</h2>
+
+        <h3>A Laravel 5.5 FullCalendar drag and drop implementation</h3>
+
+        <p>You can use this code as a start to a Laravel 5.5, FullCalendar drag and drop application</p>
+        
+        <p>It pulls in <a href="https://fullcalendar.io/">FullCalendar</a> and <a href="https://github.com/t4t5/sweetalert">SweetAlert</a> via CDN</p>
+        
+        <p>Install as a stand alone application (The following is using xampp on windows localhost)</p>
+        
+        <p>Includes full CRUD with dummy seed data in March 2018 for example purposes. It uses MySQL in this example</p>
+        
+        <p>The following instructions assume a working knowledge of Composer and Laravel:</p>
+        
+        <ul>
+            <li>git clone https://github.com/coderustler/events.git</li>
+            <li>cd to: events</li>
+            <li>Run: composer update</li>
+            <li>Create a blank database: events</li>
+            <li>Windows run: copy .env.example .env or if Linux run: cd .env.example .env</li>
+            <li>Run: php artisan key:generate</li>
+            <li>Edit .env file database constants and url per your specifications, per this example: APP_URL=http://localhost:8000</li>
+            <li>Run: php artisan migrate</li>
+            <li>Run: php artisan db:seed</li>
+            <li>Run: php artisan:serve</li>
+            <li>Point browser to http://127.0.0.1:8000/events</li>
+            <li>You can now create, read, update, delete events</li>
+            <li>Enjoy!</li>
+        </ul>
+
+    </div>
+</body>
+</html>
+
